@@ -1,0 +1,54 @@
+#ifndef LOG_H_INCLUDED
+#define LOG_H_INCLUDED
+
+#include <vector>
+#include <string>
+
+//struct Entry
+//{
+//    enum Entry_type
+//    {
+//        N,
+//        ERR
+//    };
+//    std::string text;
+//    Entry_type type;
+//
+//    Entry(Entry_type t, std::string tx)
+//    {
+//        text = tx;
+//        type = t;
+//    }
+//};
+
+//class to log all program acitivity
+
+class Log
+{
+    //data
+    private:
+        std::vector<std::string> logstr;
+
+    //methods declaration
+    public:
+        //constructors
+        Log();
+
+        //methods
+        char load_syntax(); //load syntax from file specified in 'CONF' -- return value: 0=ok | errors: 1=file not found, 2=less lines than actions, warnings: 3=more lines than actions
+        bool load_log(const char path[]);
+        bool save_log(const char path[]);
+        void add(std::string s); //add normal entry
+        void err(std::string s); //add error entry
+
+        //print methods
+        void print(unsigned int entry); //displays 'logstr[entry]'
+        void print(unsigned int start, unsigned int end); //displays 'logstr[start]' to 'logstr[end]' -- if end=0 logstr[start] to logstr[entries] will be displayes
+        void print(); //displays whole content of 'logstr'
+
+    private:
+        void send_console(); //sends last entry to standard output -- used to print new log entry
+};
+
+
+#endif // LOG_H_INCLUDED
