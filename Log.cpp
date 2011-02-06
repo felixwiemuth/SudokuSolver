@@ -1,5 +1,3 @@
-#include "Log.h"
-
 /* Copyright (C) 2011 by Felix Wiemuth
    This code is licensed under the GNU GENERAL PUBLIC LICENSE http://www.gnu.org/licenses/gpl.txt */
 
@@ -9,7 +7,6 @@
 #include <fstream>
 #include <iostream>
 
-//#include <boost/algorithm/string/replace.hpp>
 
 using namespace std;
 
@@ -18,11 +15,11 @@ using namespace std;
 
 Log::Log()
 {
-
+    add("Logging done by Log 1.0");
+    add("--- Begin logging now ---");
 }
 
 //class methods definition
-
 
 bool Log::load_log(const char path[]) //loads a saved log from file 'filename' -- return value: true=ok | errors: false=file not found or could not be opened
 {
@@ -71,7 +68,6 @@ void Log::err(std::string s)
     logstr.push_back("ERR: " + s);
     send_console();
 }
-
 
 void Log::print(unsigned int entry)
 {
