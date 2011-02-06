@@ -98,4 +98,3 @@ void Log::send_console()
 {
     cout << ">>> " << logstr.back() << endl; //send every log entry to standard output
 }
-
