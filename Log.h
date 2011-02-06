@@ -35,7 +35,6 @@ class Log
         Log();
 
         //methods
-        char load_syntax(); //load syntax from file specified in 'CONF' -- return value: 0=ok | errors: 1=file not found, 2=less lines than actions, warnings: 3=more lines than actions
         bool load_log(const char path[]);
         bool save_log(const char path[]);
         void add(std::string s); //add normal entry
