@@ -41,6 +41,7 @@ bool Log::load_log(const char path[]) //loads a saved log from file 'filename' -
     return true; //return true = O.K.
 }
 
+//TODO last line is written twice into text-file!
 bool Log::save_log(const char path[]) //saves 'logstr' to file 'path' or overwrites it (!) -- return value: true=ok | errors: false=file could not be opened
 {
     ofstream file(path, ios::trunc); //create filestream to write, open file
