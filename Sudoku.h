@@ -8,6 +8,7 @@ class Sudoku
 {
     protected:
     private:
+        std::string file;
         int base; //NxN Sudoku (n x n x n x n)
         int grid[3][3][3][3]; //[block_x][block_y][field_x][field_y] [bx][by][fx][fy]
         bool valid; //indicates whether Sudoku in 'grid' is valid

@@ -21,17 +21,24 @@ Sudoku::Sudoku(const char file[])
 
 Sudoku::~Sudoku()
 {
-    //dtor
+    stringstream sstr;
+    sstr << file << ".log";
+    log.save_log(sstr.str().c_str());
 }
 
 void Sudoku::init()
 {
+    file = "d\0";
     base = 3; //3x3 Sudoku
     valid = false;
 }
 
 bool Sudoku::load_from_file(const char file[])
 {
+    this->file = file;
+    stringstream sstr;
+    sstr << "File: " << this->file;
+    log.add(sstr.str());
     ifstream infile(file); //create filestream to read, open file
     if (infile.is_open() == false)
     {
