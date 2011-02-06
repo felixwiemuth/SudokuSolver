@@ -10,13 +10,24 @@ using namespace std;
 
 Sudoku::Sudoku()
 {
-    base = 3; //3x3 Sudoku
-    valid = false;
+    init();
+}
+
+Sudoku::Sudoku(const char file[])
+{
+    init();
+    load_from_file(file);
 }
 
 Sudoku::~Sudoku()
 {
     //dtor
+}
+
+void Sudoku::init()
+{
+    base = 3; //3x3 Sudoku
+    valid = false;
 }
 
 bool Sudoku::load_from_file(const char file[])
