@@ -15,8 +15,12 @@ class Sudoku
 
     public:
         Sudoku();
+        Sudoku(const char file[]);
         virtual ~Sudoku();
+    private:
+        void init(); //initialises sttributes
 
+    public:
         bool load_from_file(const char file[]);
         bool solve();
         int is_solved(); //returns number of fields that are not solved ('0') -- return value: '0' = solved, '>0' = unsolved
