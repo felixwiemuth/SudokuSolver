@@ -15,6 +15,7 @@ int main()
 //    s1.print();
 //    s1.solve();
 //    s1.print();
+    Sudoku s1;
 
     Sudoku s2("sudoku.txt");
     s2.solve();
